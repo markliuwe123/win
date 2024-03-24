@@ -23,9 +23,9 @@ jobs:
         ./cloudflared-windows-amd64.exe service install eyJhIjoiYjkyMWIzZTcwMGQ0NmJlMmY0NGE1NTRhYzg3NDUzNTQiLCJ0IjoiMjY3ODIwOGMtZTllNC00ZTdjLWE0NTItNGI4Y2QwYWU2NmE2IiwicyI6Ik1qY3hOek16T1RjdE5HRXdZUzAwT1dFMUxXSmxaV010TldNd1ptVXlOakpoWlRWbCJ9
         echo "end "
 
-      - name: Don't kill instace        
-        run:  |
-          echo "sleep start"
-          timeout /t 30
-          echo "sleep end"
+    - name: Don't kill instace        
+      run:  |
+        echo "sleep start"
+        timeout /t 30
+        echo "sleep end"
 
