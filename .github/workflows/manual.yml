@@ -35,7 +35,7 @@ jobs:
         echo "auth: password" >> ~/.config/code-server/config.yaml
         echo "password: ${{ secrets.CODE }}" >> ~/.config/code-server/config.yaml
         echo "cert: false" >> ~/.config/code-server/config.yaml        
-        Start-Process code-server -NoNewWindow
+        Start-Process -FilePath "code-server.exe" -NoNewWindow
         cat ~/AppData/Roaming/code-server/config.yaml
         echo "end "
 
