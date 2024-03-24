@@ -16,4 +16,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       shell: pwsh # 指定在 Windows 中使用 PowerShell
-      run: echo "Hello ${{ inputs.name }}"
+      run: |
+        echo "Hello "
+        winget install --id Cloudflare.cloudflared
+        echo "end "
+
