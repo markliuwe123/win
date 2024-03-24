@@ -29,13 +29,13 @@ jobs:
       run: |
         echo "code-server start"
         npm install --global code-server --unsafe-perm
-        mkdir -p ~/.config/code-server
+        mkdir -p ~/.config/code-server ~/AppData/Roaming/code-server
         echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
         echo "auth: password" >> ~/.config/code-server/config.yaml
         echo "password: ${{ secrets.CODE }}" >> ~/.config/code-server/config.yaml
-        echo "cert: false" >> ~/.config/code-server/config.yaml
-        code-server
-        cat ~/.config/code-server/config.yaml
+        echo "cert: false" >> ~/.config/code-server/config.yaml        
+        Start-Process code-server -NoNewWindow
+        cat ~/AppData/Roaming/code-server/config.yaml
         echo "end "
 
     - name: Don't kill instace     
