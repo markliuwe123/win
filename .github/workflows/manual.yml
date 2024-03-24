@@ -5,7 +5,7 @@ on:
     
 
 jobs:
-  greet:
+  win-server:
     runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -14,11 +14,18 @@ jobs:
       uses: actions/checkout@v4
 
     # Runs a single command using the runners shell
-    - name: Send greeting
+    - name: cloudflared
       shell: pwsh # 指定在 Windows 中使用 PowerShell
       run: |
         echo "Hello "
         curl.exe -JLO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe
         ls
+        ./cloudflared-windows-amd64.exe service install eyJhIjoiYjkyMWIzZTcwMGQ0NmJlMmY0NGE1NTRhYzg3NDUzNTQiLCJ0IjoiMjY3ODIwOGMtZTllNC00ZTdjLWE0NTItNGI4Y2QwYWU2NmE2IiwicyI6Ik1qY3hOek16T1RjdE5HRXdZUzAwT1dFMUxXSmxaV010TldNd1ptVXlOakpoWlRWbCJ9
         echo "end "
+
+      - name: Don't kill instace        
+        run:  |
+          echo "sleep start"
+          timeout /t 30
+          echo "sleep end"
 
