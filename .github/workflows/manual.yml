@@ -19,5 +19,6 @@ jobs:
       run: |
         echo "Hello "
         curl.exe -O https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe
+        ls
         echo "end "
 
