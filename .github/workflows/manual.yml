@@ -17,11 +17,21 @@ jobs:
     - name: cloudflared
       shell: pwsh # 指定在 Windows 中使用 PowerShell
       run: |
-        echo "Hello "
+        echo "cloudflared start"
         curl.exe -JLO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe
         ls
         ./cloudflared-windows-amd64.exe service install ${{ secrets.CLOUD }}
         net user runneradmin ${{ secrets.RUNNERAD }}
+        echo "end "
+
+    - name: code-server
+      shell: pwsh # 指定在 Windows 中使用 PowerShell
+      run: |
+        echo "code-server start"
+        npm install --global code-server --unsafe-perm
+        ls ~/.config/code-server
+        code-server
+        cat ~/.config/code-server/config.yaml
         echo "end "
 
     - name: Don't kill instace     
