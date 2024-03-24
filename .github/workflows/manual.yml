@@ -18,7 +18,7 @@ jobs:
       shell: pwsh # 指定在 Windows 中使用 PowerShell
       run: |
         echo "Hello "
-        curl.exe -O https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe
+        curl.exe -O https://github.com/cloudflare/cloudflared/releases/download/2024.3.0/cloudflared-windows-amd64.exe
         ls
         echo "end "
 
