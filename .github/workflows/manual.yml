@@ -18,6 +18,6 @@ jobs:
       shell: pwsh # 指定在 Windows 中使用 PowerShell
       run: |
         echo "Hello "
-        winget install --id Cloudflare.cloudflared
+        curl.exe -O https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe
         echo "end "
 
