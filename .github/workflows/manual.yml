@@ -26,13 +26,15 @@ jobs:
 
     - name: code-server
       shell: pwsh # 指定在 Windows 中使用 PowerShell
+      if: false
       # ~/AppData/Roaming/code-server
       # cat ~/AppData/Roaming/code-server/config.yaml
       # Start-Process -FilePath "code-server.exe" -NoNewWindow
       run: |
         echo "code-server start"
         npm install --global code-server --unsafe-perm
-        mkdir -p ~/.config/code-server         
+        mkdir -p ~/.config/code-server
+        dirPath="~/AppData/Roaming/code-server/config.yaml"       
         echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
         echo "auth: password" >> ~/.config/code-server/config.yaml
         echo "password: ${{ secrets.CODE }}" >> ~/.config/code-server/config.yaml
