@@ -46,6 +46,6 @@ jobs:
       shell: pwsh # 指定在 Windows 中使用 PowerShell   
       run: |
         echo "sleep start"
-        sleep 3600
+        sleep 20,880
         echo "sleep end"
 
