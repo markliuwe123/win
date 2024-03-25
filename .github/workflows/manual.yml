@@ -30,17 +30,16 @@ jobs:
       # ~/AppData/Roaming/code-server
       # cat ~/AppData/Roaming/code-server/config.yaml
       # Start-Process -FilePath "code-server.exe" -NoNewWindow
+      # dirPath="C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml"       
       run: |
         echo "code-server start"
         npm install --global code-server --unsafe-perm
-        mkdir -p ~/.config/code-server
-        dirPath="~/AppData/Roaming/code-server/config.yaml"       
-        echo "bind-addr: 127.0.0.1:8080" > ~/.config/code-server/config.yaml
-        echo "auth: password" >> ~/.config/code-server/config.yaml
-        echo "password: ${{ secrets.CODE }}" >> ~/.config/code-server/config.yaml
-        echo "cert: false" >> ~/.config/code-server/config.yaml        
-        
-        
+        mkdir -p ~/.config/code-server        
+        echo "bind-addr: 127.0.0.1:8080" > C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
+        echo "auth: password" >> C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
+        echo "password: ${{ secrets.CODE }}" >> C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
+        echo "cert: false" >> C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml   
+        code-server        
         echo "end "
 
     - name: Don't kill instace     
