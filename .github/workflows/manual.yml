@@ -34,7 +34,7 @@ jobs:
       run: |
         echo "code-server start"
         npm install --global code-server --unsafe-perm
-        mkdir -p ~/.config/code-server
+        mkdir -p C:\Users\runneradmin\AppData\Roaming\code-server\Config
         touch C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml        
         echo "bind-addr: 127.0.0.1:8080" > C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
         echo "auth: password" >> C:\Users\runneradmin\AppData\Roaming\code-server\Config\config.yaml
